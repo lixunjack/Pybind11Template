@@ -8,7 +8,7 @@ To install CodaWaveSolver, follow these steps:
 
 - Clone this repository.
 - Navigate to the repository directory.
-- Run `pip install ./CodaWaveSolver`.
+- Run `pip install ./CodaWaveSolver`
 
 ## Usage Example
 
@@ -50,31 +50,6 @@ print(cc_epsilon)
 import matplotlib.pyplot as plt
 plt.plot(np.max(cc_epsilon, axis=1))
 
-
-## Continuous Integration
-
-|      CI              | Status |
-|----------------------|--------|
-| Linux/macOS Travis   | [![Travis-CI][travis-badge]][travis-link] |
-| MSVC 2019            | [![AppVeyor][appveyor-badge]][appveyor-link] |
-| conda.recipe         | [![Conda Actions Status][actions-conda-badge]][actions-conda-link] |
-| pip builds           | [![Pip Actions Status][actions-pip-badge]][actions-pip-link] |
-| [`cibuildwheel`][]   | [![Wheels Actions Status][actions-wheels-badge]][actions-wheels-link] |
-
-[gitter-badge]:            https://badges.gitter.im/pybind/Lobby.svg
-[gitter-link]:             https://gitter.im/pybind/Lobby
-[actions-conda-link]:      https://github.com/pybind/python_example/actions?query=workflow%3A%22Conda
-[actions-conda-badge]:     https://github.com/pybind/python_example/workflows/Conda/badge.svg
-[actions-pip-link]:        https://github.com/pybind/python_example/actions?query=workflow%3A%22Pip
-[actions-pip-badge]:       https://github.com/pybind/python_example/workflows/Pip/badge.svg
-[actions-wheels-link]:     https://github.com/pybind/python_example/actions?query=workflow%3AWheels
-[actions-wheels-badge]:    https://github.com/pybind/python_example/workflows/Wheels/badge.svg
-[travis-link]:             https://travis-ci.org/pybind/python_example
-[travis-badge]:            https://travis-ci.org/pybind/python_example.svg?branch=master&status=passed
-[appveyor-link]:           https://ci.appveyor.com/project/wjakob/python-example
-<!-- TODO: get a real badge link for appveyor -->
-[appveyor-badge]:          https://travis-ci.org/pybind/python_example.svg?branch=master&status=passed
-
 ## Building the Documentation
 
 The documentation for this project is generated using Sphinx. To generate HTML-based reference documentation:
@@ -88,7 +63,4 @@ For other formats, please refer to the Sphinx manual.
 
 CodaWaveSolver is provided under a BSD-style license. By using, distributing, or contributing to this project, you agree to the terms and conditions of this license.
 
----
-
-Feel free to adjust the README to include more detailed information about your project, such as installation requirements, additional usage examples, or any other relevant details.
 
