@@ -1,6 +1,7 @@
 #
 # python_example documentation build configuration file, created by
 # sphinx-quickstart on Fri Feb 26 00:29:33 2016.
+# Jack Li CodaWaveSolver
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -49,9 +50,9 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = "python_example"
-copyright = "2016, Sylvain Corlay"
-author = "Sylvain Corlay"
+project = "CodaWaveSolver"
+copyright = "2024, Jack Li"
+author = "Jack Li"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -203,7 +204,7 @@ html_static_path = ["_static"]
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "python_exampledoc"
+htmlhelp_basename = "CodaWaveSolverdoc"
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -224,9 +225,9 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "python_example.tex",
-        "python_example Documentation",
-        "Sylvain Corlay",
+        "CodaWaveSolver.tex",
+        "CodaWaveSolverDocumentation",
+        "Jack Li",
         "manual",
     ),
 ]
@@ -257,7 +258,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, "python_example", "python_example Documentation", [author], 1)
+    (master_doc, "CodaWaveSolver", "CodaWaveSolver Documentation", [author], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -272,10 +273,10 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "python_example",
-        "python_example Documentation",
+        "CodaWaveSolver",
+        "CodaWaveSolver Documentation",
         author,
-        "python_example",
+        "CodaWaveSolver",
         "One line description of project.",
         "Miscellaneous",
     ),
@@ -295,4 +296,4 @@ texinfo_documents = [
 
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {"https://docs.python.org/": None}
+intersphinx_mapping = {"https://github.com/lixunjack/JackLi.github.io": None}

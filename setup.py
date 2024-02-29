@@ -1,8 +1,10 @@
-# Available at setup time due to pyproject.toml
 from pybind11.setup_helpers import Pybind11Extension, build_ext
 from setuptools import setup
+import sysconfig
 
 __version__ = "0.0.1"
+
+
 
 # The main interface is through Pybind11Extension.
 # * You can add cxx_std=11/14/17, and then build_ext can be removed.
@@ -13,28 +15,31 @@ __version__ = "0.0.1"
 #   Sort input source files if you glob sources to ensure bit-for-bit
 #   reproducible builds (https://github.com/pybind/python_example/pull/53)
 
+
+# Get the include directory dynamically
+include_dirs = [sysconfig.get_paths()['include']]
+extra_compile_args = ["-std=c++17"]
+
+
 ext_modules = [
     Pybind11Extension(
-        "python_example",
-        ["src/main.cpp"],
-        # Example: passing in the version to the compiled code
+        "CodaWaveSolver",
+        ["Utility/CodaWaveSolver.cpp"],
         define_macros=[("VERSION_INFO", __version__)],
+        include_dirs=include_dirs,
+        extra_compile_args=extra_compile_args,
     ),
 ]
 
 setup(
-    name="python_example",
+    name="CodaWaveSolver",
     version=__version__,
-    author="Sylvain Corlay",
-    author_email="sylvain.corlay@gmail.com",
-    url="https://github.com/pybind/python_example",
-    description="A test project using pybind11",
-    long_description="",
+    author="Jack Li",
+    author_email="your_email@example.com",
+    url="https://github.com/your_username/CodaWaveSolver",
+    description="A Python module to calculate phase shift between time-serial signals using Pybind11",
+    long_description="CodaWaveSolver is a Python module that implements a stretch method to calculate phase shift between time-serial signals. It utilizes Pybind11 to bind C++ code to Python.",
     ext_modules=ext_modules,
-    extras_require={"test": "pytest"},
-    # Currently, build_ext only provides an optional "highest supported C++
-    # level" feature, but in the future it may provide more features.
-    cmdclass={"build_ext": build_ext},
-    zip_safe=False,
     python_requires=">=3.7",
 )
+
