@@ -3,6 +3,7 @@
 
 #include <pybind11/pybind11.h>
 #include <pybind11/numpy.h>
+#include <omp.h>
 
 namespace py = pybind11;
 
@@ -12,6 +13,8 @@ void calculateCCstrech(const py::array_t<double>& data_set,
     const py::array_t<double>& epsilon,
     double window_start_frac, double window_end_frac,
     py::ssize_t ref_trace_index);
+
+
 
 PYBIND11_MODULE(codawavesolver, m) {
     m.doc() = "Module for calculating phase shift between time-serial signals using the stretch method";
@@ -33,6 +36,9 @@ PYBIND11_MODULE(codawavesolver, m) {
         Note:
             This function assumes that all input arrays have compatible shapes.
     )pbdoc");
+
+    m.def("get_max_threads", &omp_get_max_threads, "Returns max number of threads");
+    m.def("set_num_threads", &omp_set_num_threads, "Set number of threads");
 }
 
 #endif /* CODAWAVESOLVER_HPP */
