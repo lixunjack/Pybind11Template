@@ -27,7 +27,7 @@ void calculateCCstrech(const py::array_t<double>& data_set,
             cc_epsilon_ptr(i, j) = 0.0;
 
             for (py::ssize_t k= py::ssize_t(data_set_ptr.shape(1) * window_start_frac); k < py::ssize_t(data_set_ptr.shape(1) * window_end_frac); k++) {
-                py::ssize_t shift = static_cast<py::ssize_t>(time_axis_ptr(k) * epsilon_ptr(j) / time_interval);
+                int shift = static_cast<int>(time_axis_ptr(k) * epsilon_ptr(j) / time_interval);
 
                 cc_epsilon_ptr(i, j) += data_set_ptr(ref_trace_index, k) * data_set_ptr(i, k + shift);
                 
