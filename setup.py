@@ -33,13 +33,27 @@ ext_modules = [
 
 setup(
     name="CodaWaveSolver",
+    version="0.1.61",
     version=__version__,
     author="Jack Li",
+    license="MIT",
     author_email="your_email@example.com",
-    url="https://github.com/your_username/CodaWaveSolver",
-    description="A Python module to calculate phase shift between time-serial signals using Pybind11",
+    url="https://github.com/lixunjack/CodaWaveSolver",
+    description="A Python module to calculate phase shift between time-serial signals, backend with cpp and Pybind11",
     long_description="CodaWaveSolver is a Python module that implements a stretch method to calculate phase shift between time-serial signals. It utilizes Pybind11 to bind C++ code to Python.",
     ext_modules=ext_modules,
     python_requires=">=3.7",
+    install_requires=[
+    'pybind11 >=2.10.0',
+    'numpy>=1.22.4',     # appox version: numpy 1.19.x but at least 1.19.2
+    'keyring>=23.7.0', 
+    'pkginfo>=1.8.3',
+    'scipy>=1.10.0',
+    'matplotlib-base>=3.5.2', 
+    'tqdm>=4.64.0', 
+    'h5py>=3.6.0', 
+    'jupyter>=1.0.0'], 
 )
+
+
 
