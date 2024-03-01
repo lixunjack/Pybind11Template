@@ -28,19 +28,21 @@ void calculateCCstrech(const py::array_t<double>& data_set,
     // Release the GIL
     py::gil_scoped_release release;
 
-    py::ssize_t i=0, j=0, k=0, shift=0;
+    py::ssize_t i=0, j=0, k=0;
+    //warning shift cannot be size type as it can be negative number
+    int shift = 0;
     py::ssize_t numtrace = data_set_ptr.shape(0);
     py::ssize_t numtimesamples = data_set_ptr.shape(1);
-    py::ssize_t numeps = cc_epsilon_ptr.shape(0);
+    py::ssize_t numeps = epsilon_ptr.shape(0);
     //
-#pragma omp parallel for  private(i,j,k,shift,denominator2,total_deno,ij_sum) shared(numtrace,numtimesamples,numeps ,data_set_ptr,cc_epsilon_ptr,time_interval,time_axis_ptr,denominator1,epsilon_ptr) default (none)
+#pragma omp parallel for  private(i,j,k,shift,denominator2,total_deno,ij_sum) shared(window_end_frac, window_start_frac, ref_trace_index, numtrace,numtimesamples,numeps ,data_set_ptr,cc_epsilon_ptr,time_interval,time_axis_ptr,denominator1,epsilon_ptr) default (none)
     for (i = 0; i < numtrace; i++) {
         for (j = 0; j < numeps; j++) {
             denominator2 = 0.0;
             ij_sum = 0.0;
 
             for (k= py::ssize_t(numtimesamples * window_start_frac); k < py::ssize_t(numtimesamples * window_end_frac); k++) {
-                shift = static_cast<py::ssize_t>(time_axis_ptr(k) * epsilon_ptr(j) / time_interval);
+                shift = int(time_axis_ptr(k) * epsilon_ptr(j) / time_interval);
 
                 ij_sum += data_set_ptr(ref_trace_index, k) * data_set_ptr(i, k + shift);
                 
