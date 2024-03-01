@@ -33,7 +33,7 @@ void calculateCCstrech(const py::array_t<double>& data_set,
     py::ssize_t numtimesamples = data_set_ptr.shape(1);
     py::ssize_t numeps = cc_epsilon_ptr.shape(0);
     //
-#pragma omp parallel for   collapse(2) private(i,j,k,shift,denominator2,total_deno,ij_sum) shared(numtrace,numtimesamples,numeps ,data_set_ptr,cc_epsilon_ptr,time_interval,time_axis_ptr,denominator1,epsilon_ptr) default (none)
+#pragma omp parallel for  private(i,j,k,shift,denominator2,total_deno,ij_sum) shared(numtrace,numtimesamples,numeps ,data_set_ptr,cc_epsilon_ptr,time_interval,time_axis_ptr,denominator1,epsilon_ptr) default (none)
     for (i = 0; i < numtrace; i++) {
         for (j = 0; j < numeps; j++) {
             denominator2 = 0.0;
