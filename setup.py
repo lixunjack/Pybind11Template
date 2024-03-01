@@ -43,7 +43,10 @@ setup(
     ext_modules=ext_modules,
     python_requires=">=3.7",
     install_requires=[
-    'pybind11 >=2.10.0'],
+        'pybind11 >=2.10.0',
+        'numpy>=1.20',
+        'matplotlib>=3.7',
+        'importlib>=1.0'],
     cmdclass={"build_ext": build_ext},
     zip_safe=False
 )
