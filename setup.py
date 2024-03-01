@@ -17,17 +17,15 @@ __version__ = "0.0.1"
 
 
 # Get the include directory dynamically
-include_dirs = [sysconfig.get_paths()['include']]
-extra_compile_args = ["-std=c++17"]
+#include_dirs = [sysconfig.get_paths()['include']]
+#extra_compile_args = ["-std=c++17"]
 
 
 ext_modules = [
     Pybind11Extension(
         "CodaWaveSolver",
         ["Utility/CodaWaveSolver.cpp"],
-        define_macros=[("VERSION_INFO", __version__)],
-        include_dirs=include_dirs,
-        extra_compile_args=extra_compile_args,
+        define_macros=[("VERSION_INFO", __version__)]
     ),
 ]
 
@@ -53,6 +51,8 @@ setup(
     'tqdm>=4.64.0', 
     'h5py>=3.6.0', 
     'jupyter>=1.0.0'], 
+    cmdclass={"build_ext": build_ext},
+    zip_safe=False
 )
 
 
