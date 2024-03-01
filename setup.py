@@ -18,7 +18,7 @@ __version__ = "0.0.1"
 
 # Get the include directory dynamically
 include_dirs = [sysconfig.get_paths()['include']]
-extra_compile_args = ["-std=c++17"]
+extra_compile_args = ["-std=c++17", "-fopenmp"]
 
 
 ext_modules = [
