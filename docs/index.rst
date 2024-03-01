@@ -1,9 +1,15 @@
 CodaWaveInterferometry Documentation
-============================
+=====================================
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
 
-   CodaWaveSolver
+   installation
+   usage
+   api_reference
+   examples
+   about
+
+

@@ -1,7 +1,7 @@
 #for development!
 import importlib
-import stretchCC
-importlib.reload(stretchCC)
+import codawavesolver
+importlib.reload(codawavesolver)
 
 import numpy as np
 
@@ -28,7 +28,7 @@ cc_epsilon = np.zeros((num_trace, num_epsilons), dtype=float)
 
 
 
-stretchCC.calculateCCstrech(data_set, cc_epsilon, time_axis, epsilon, window_start_index, window_end_index, ref_trace_index)
+codawavesolver.calculateCCstrech(data_set, cc_epsilon, time_axis, epsilon, window_start_index, window_end_index, ref_trace_index)
 
 print(cc_epsilon)
 

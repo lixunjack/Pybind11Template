@@ -1,1 +1,4 @@
-.. automodule:: CodaWaveSolver
+.. automodule:: codawavesolver
+   :members:
+   :undoc-members:
+   :show-inheritance:

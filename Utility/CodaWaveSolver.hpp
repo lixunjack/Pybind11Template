@@ -13,7 +13,7 @@ void calculateCCstrech(const py::array_t<double>& data_set,
     double window_start_frac, double window_end_frac,
     py::ssize_t ref_trace_index);
 
-PYBIND11_MODULE(CodaWaveSolver, m) {
+PYBIND11_MODULE(codawavesolver, m) {
     m.doc() = "Module for calculating phase shift between time-serial signals using the stretch method";
     m.def("calculateCCstrech", &calculateCCstrech, R"pbdoc(
         Function to calculate the cross-correlation epsilon between time-serial signals.

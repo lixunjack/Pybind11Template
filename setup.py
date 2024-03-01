@@ -17,40 +17,33 @@ __version__ = "0.0.1"
 
 
 # Get the include directory dynamically
-#include_dirs = [sysconfig.get_paths()['include']]
-#extra_compile_args = ["-std=c++17"]
+include_dirs = [sysconfig.get_paths()['include']]
+extra_compile_args = ["-std=c++17"]
 
 
 ext_modules = [
     Pybind11Extension(
-        "CodaWaveSolver",
-        ["Utility/CodaWaveSolver.cpp"],
-        define_macros=[("VERSION_INFO", __version__)]
+        "codawavesolver",
+        ["Utility/codawavesolver.cpp"],
+        define_macros=[("VERSION_INFO", __version__)],
+        include_dirs=include_dirs,
+        extra_compile_args=extra_compile_args,
     ),
 ]
 
 setup(
-    name="CodaWaveSolver",
-    version="0.1.61",
+    name="codawavesolver",
     version=__version__,
     author="Jack Li",
     license="MIT",
     author_email="your_email@example.com",
-    url="https://github.com/lixunjack/CodaWaveSolver",
+    url="https://github.com/lixunjack/codawavesolver",
     description="A Python module to calculate phase shift between time-serial signals, backend with cpp and Pybind11",
-    long_description="CodaWaveSolver is a Python module that implements a stretch method to calculate phase shift between time-serial signals. It utilizes Pybind11 to bind C++ code to Python.",
+    long_description="codawavesolver is a Python module that implements a stretch method to calculate phase shift between time-serial signals. It utilizes Pybind11 to bind C++ code to Python.",
     ext_modules=ext_modules,
     python_requires=">=3.7",
     install_requires=[
-    'pybind11 >=2.10.0',
-    'numpy>=1.22.4',     # appox version: numpy 1.19.x but at least 1.19.2
-    'keyring>=23.7.0', 
-    'pkginfo>=1.8.3',
-    'scipy>=1.10.0',
-    'matplotlib-base>=3.5.2', 
-    'tqdm>=4.64.0', 
-    'h5py>=3.6.0', 
-    'jupyter>=1.0.0'], 
+    'pybind11 >=2.10.0'],
     cmdclass={"build_ext": build_ext},
     zip_safe=False
 )

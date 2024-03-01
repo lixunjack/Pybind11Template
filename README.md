@@ -1,24 +1,24 @@
-# CodaWaveSolver
+# codawavesolver
 
-CodaWaveSolver is a Python module that implements a stretch method to calculate phase shift between time-serial signals. It utilizes Pybind11 to bind C++ code to Python.
+codawavesolver is a Python module that implements a stretch method to calculate phase shift between time-serial signals. It utilizes Pybind11 to bind C++ code to Python.
 
 ## Installation
 
-To install CodaWaveSolver, follow these steps:
+To install codawavesolver, follow these steps:
 
 - Clone this repository.
 - Navigate to the repository directory.
-- Run `pip install ./CodaWaveSolver`
+- Run `pip install ./codawavesolver`
 
 ## Usage Example
 
-For development purposes, you can test the functionality of CodaWaveSolver with the following command:
+For development purposes, you can test the functionality of codawavesolver with the following command:
 
 ```python
 # For development!
 import importlib
-import CodaWaveSolver
-importlib.reload(CodaWaveSolver)
+import codawavesolver
+importlib.reload(codawavesolver)
 
 import numpy as np
 
@@ -43,7 +43,7 @@ ref_trace_index = 0
 # Create cc_epsilon vector as a NumPy array
 cc_epsilon = np.zeros((num_trace, num_epsilons), dtype=float)
 
-CodaWaveSolver.calculateCCstrech(data_set, cc_epsilon, time_axis, epsilon, window_start_index, window_end_index, ref_trace_index)
+codawavesolver.calculateCCstrech(data_set, cc_epsilon, time_axis, epsilon, window_start_index, window_end_index, ref_trace_index)
 
 print(cc_epsilon)
 
@@ -54,13 +54,13 @@ plt.plot(np.max(cc_epsilon, axis=1))
 
 The documentation for this project is generated using Sphinx. To generate HTML-based reference documentation:
 
-- Navigate to the `docs` directory (`cd CodaWaveSolver/docs`).
+- Navigate to the `docs` directory (`cd codawavesolver/docs`).
 - Run `make html`.
 
 For other formats, please refer to the Sphinx manual.
 
 ## License
 
-CodaWaveSolver is provided under a BSD-style license. By using, distributing, or contributing to this project, you agree to the terms and conditions of this license.
+codawavesolver is provided under a BSD-style license. By using, distributing, or contributing to this project, you agree to the terms and conditions of this license.
 
 

@@ -1,4 +1,4 @@
-#include "CodaWaveSolver.hpp"
+#include "codawavesolver.hpp"
 
 void calculateCCstrech(const py::array_t<double>& data_set,
     py::array_t<double>& cc_epsilon,
