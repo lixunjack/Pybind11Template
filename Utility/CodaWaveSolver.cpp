@@ -17,7 +17,7 @@ void calculateCCstrech(const py::array_t<double>& data_set,
     auto time_interval = time_axis_ptr(1) - time_axis_ptr(0);
   
 
-    for (py::ssize_t  i= py::ssize_t(data_set_ptr.shape(1) * window_start_frac); i < py::ssize_t (data_set_ptr.shape(1)* window_end_frac); i++) { //have to use special type to access
+    for (py::ssize_t  i= static_cast<py::ssize_t>(data_set_ptr.shape(1) * window_start_frac); i < static_cast<py::ssize_t>(data_set_ptr.shape(1)* window_end_frac); i++) { //have to use special type to access
         denominator1 += data_set_ptr(ref_trace_index, i) * data_set_ptr(ref_trace_index, i);
     }
 
