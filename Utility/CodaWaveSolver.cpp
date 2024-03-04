@@ -43,7 +43,7 @@ void calculateCCstrech(const py::array_t<double>& data_set,
             ij_sum = 0.0;
 
             for (k= static_cast<py::ssize_t>(numtimesamples * window_start_frac); k < static_cast<py::ssize_t>(numtimesamples * window_end_frac); k++) {
-                shift = int(time_axis_ptr(k) * epsilon_ptr(i,j) / time_interval);
+                shift = static_cast<int>(time_axis_ptr(k) * epsilon_ptr(i,j) / time_interval);
 
                 ij_sum += data_set_ptr(ref_trace_index, k) * data_set_ptr(i, k + shift);
                 
