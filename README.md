@@ -49,7 +49,7 @@ print(cc_epsilon)
 
 import matplotlib.pyplot as plt
 plt.plot(np.max(cc_epsilon, axis=1))
-
+```
 ## Building the Documentation
 
 The documentation for this project is generated using Sphinx. To generate HTML-based reference documentation:
