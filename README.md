@@ -49,6 +49,7 @@ print(cc_epsilon)
 
 import matplotlib.pyplot as plt
 plt.plot(np.max(cc_epsilon, axis=1))
+```
 
 ## Building the Documentation
 
