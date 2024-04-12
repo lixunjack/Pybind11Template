@@ -1,6 +1,6 @@
 # codawavesolver
 
-codawavesolver is a Python module that implements a stretch method to calculate phase shift between time-serial signals. It utilizes Pybind11 to bind C++ code to Python.
+codawavesolver is a Python module that implements a stretch method to calculate phase shift between time-serial signals that are recorded at different times and with only slight difference (in phase). It utilizes Pybind11 to bind C++ code to Python.
 
 ## Installation
 
