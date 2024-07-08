@@ -28,7 +28,7 @@ void calculateCCstrech(const py::array_t<double>& data_set,
 
     py::ssize_t i=0, j=0, k=0;
     //warning shift cannot be size type as it can be negative number
-    int shift = 0;
+    long long int shift = 0;
     py::ssize_t numtrace = data_set_ptr.shape(0);
     py::ssize_t numtimesamples = data_set_ptr.shape(1);
     py::ssize_t numeps = epsilon_ptr.shape(1);
@@ -43,7 +43,7 @@ void calculateCCstrech(const py::array_t<double>& data_set,
             ij_sum = 0.0;
 
             for (k= static_cast<py::ssize_t>(numtimesamples * window_start_frac); k < static_cast<py::ssize_t>(numtimesamples * window_end_frac); k++) {
-                shift = static_cast<int>(time_axis_ptr(k) * epsilon_ptr(i,j) / time_interval);
+                shift = static_cast<long long int>(time_axis_ptr(k) * epsilon_ptr(i,j) / time_interval);
 
                 ij_sum += data_set_ptr(ref_trace_index, k) * data_set_ptr(i, k + shift);
                 
